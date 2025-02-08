@@ -36,8 +36,20 @@
   }
 } 
 
-
+/*------------ Auto-hide Bottom Essentials ------------*/
 /* https://www.reddit.com/r/zen_browser/comments/1ikina4/comment/mbmxp7o/ */
+
+#zen-essentials-container .tabbrowser-tab:is([pinned]) {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out !important;
+  pointer-events: none;
+}
+
+#zen-essentials-container:hover .tabbrowser-tab:is([pinned]),
+#zen-essentials-container:focus-within .tabbrowser-tab:is([pinned]) {
+  opacity: 1 !important;
+  pointer-events: auto;
+}
 
 #zen-sidebar-icons-wrapper{
   opacity: 0;
@@ -47,9 +59,6 @@
       opacity: 1 !important;
   }
 }
-
-
-
 
 /* ============================================================================== */
 
