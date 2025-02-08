@@ -1,124 +1,11 @@
 .reset-icon {
 	display: none !important;
 }
-/*Set Font to Poppins*/
+/* Set Font to Poppins */
 * {
     font-family: 'Poppins', sans-serif;
   }
   
-.browserSidebarContainer {
-    background-color: rgba(0, 0, 0, 0.226) !important; /* Browser Container transparency */
-} 
-
-
-/* 
-
-@media (-moz-bool-pref: "zen.tabs.vertical") {
-  #navigator-toolbox:is(#navigator-toolbox[zen-user-hover="true"][zen-has-hover], #navigator-toolbox[zen-user-hover="true"]:focus-within, #navigator-toolbox[zen-user-hover="true"][movingtab], #navigator-toolbox[zen-user-hover="true"][flash-popup], #navigator-toolbox[zen-user-hover="true"][has-popup-menu], #navigator-toolbox[zen-user-hover="true"]:has([open="true"]:not(tab):not(#zen-sidepanel-button)), #navigator-toolbox[zen-expanded="true"]:not([zen-user-hover="true"])) {
-    & #zen-essentials-container {
-      --tab-min-height: 47px !important;
-    }
-  }
-}
-
-.tab-icon-overlay {
-  display: none !important;
-}
-
-#TabsToolbar #firefox-view-button[open] > .toolbarbutton-icon, .tab-background:is([selected], [multiselected]) {
-	box-shadow: none !important;
-  border-top: 1px solid #ffffff2d !important;
-	border-bottom: 1px solid #0000002d !important;
-  background-color: rgba(255, 255, 255, 0.17) !important;
-}
-
-.tabbrowser-tab .tab-background{
-  transition: background-color 0.2s ease;
-}
-
-.tabbrowser-tab[pinned]:not([zen-essential="true"]) .tab-stack .tab-background {
-      border: 1px solid #ffffff13 !important;
-}
-.tabbrowser-tab[pinned]:not([zen-essential="true"]) .tab-stack .tab-background:is([selected], [multiselected]) {
-  border-top: 1px solid #ffffff2d !important;
-	border-bottom: 1px solid #0000002d !important;
-  background-color: rgba(255, 255, 255, 0.17) !important;
-}
-
-#zen-workspaces-button {
-    box-shadow: 0px 1px 10px rgba(0,0,0,0.1) !important;
-    border-radius: 8px !important;
-}
-  .titlebar-button > .toolbarbutton-icon {
-    list-style-image: none;
-    border-radius: 10px;
-    transition: 0.2s ease;
-  }
-
-
-  #zen-workspaces-button {
-    .subviewbutton {
-        &[active="true"] {
-            background: rgba(255, 255, 255, 0.1) !important;
-            transition: 0.3s !important;
-            border: 1px solid #ffffff0a !important;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.062) !important;
-  
-        }
-  
-        &:hover {
-            background: rgba(255, 255, 255, 0.2) !important;
-            transition: 0.3s !important;
-        }
-  
-        &:after {
-            display: none !important;
-        }
-  
-    }
-  }
-  
-  #zen-current-workspace-indicator {
-      padding: 10px calc(4px + var(--tab-inline-padding)) !important;
-      font-weight: 500 !important; 
-  }
-  
-  .tab-close-button {
-      width: 18px !important;
-      height: 18px !important;
-      padding: 5px !important;
-      border-radius: 20px !important;
-    
-  }
-  
-  .close-icon {
-      background-color: color-mix(in srgb, currentColor 10%, transparent) !important;
-  }
-  
-  .close-icon:hover {
-      background-color: color-mix(in srgb, currentColor 20%, transparent) !important;
-  }
-      */
-  
-  /* This style simply makes the tab stay visible while it is being closed as well as makes the transition a bit slower */
-  
-  /*
-  .tabbrowser-tab:not([pinned],[fadein]){
-    transition-duration: 240ms, 240ms !important;
-    transition-timing-function: ease-out, ease-out !important;
-    visibility: visible !important;
-  }
-  .tab-content:not([fadein],[pinned])
-  .tab-icon-pending:not([fadein]),
-  .tab-icon-image:not([fadein]),
-  .tab-label:not([fadein]){
-    visibility: visible !important;
-  }
-  .tab-label:not([fadein]){
-    display: flex !important;
-  }
-
-  */
   
 /*------------ URL BAR ------------*/
   
@@ -127,7 +14,7 @@
 }
 
 #urlbar-background {
-	border: 1px solid #ffffff13 !important;
+	border: 1px solid #ffffff04 !important;
 }
 
 :root {
@@ -149,9 +36,29 @@
   }
 } 
 
-/*------------ TITLE BAR ------------*/
 
-/* .titlebar-button > .toolbarbutton-icon {
+/* https://www.reddit.com/r/zen_browser/comments/1ikina4/comment/mbmxp7o/ */
+
+#zen-sidebar-icons-wrapper{
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out !important;
+  
+  &:hover{
+      opacity: 1 !important;
+  }
+}
+
+
+
+
+/* ============================================================================== */
+
+/* From Lunar OS */
+/* https://github.com/lunar-os/ZenCss/ */
+
+/*------------ WINDOWS CONTROL (MIN-MAX-CLOSE) ------------*/
+
+.titlebar-button > .toolbarbutton-icon {
   list-style-image: none;
   border-radius: 10px;
   transition: 0.2s ease;
@@ -177,47 +84,39 @@
 .titlebar-button {
   background: none !important;
   padding: 8px 8px !important;
-} */
+} 
 
-
+/* ============================================================================== */
 
 /* FROM Dark Harmony */
 /* https://github.com/itsmefen/Dark-Harmony/blob/main/chrome/userChrome.css */
 
-/*------------ WINDOWS CONTROL (MIN-MAX-CLOSE) ------------*/
-.titlebar-button {
-  background: transparent !important;
-  padding-inline: 0px !important;
-}
-.titlebar-button > .toolbarbutton-icon {
-  background: #ffffff1f !important;
-  list-style-image: none !important;
-  border-radius: 4px;
-  transition: 0.14s ease;
-  margin-right: 10px;
-  width: 13px !important;
-  height: 13px !important;
-}
-.titlebar-min > .toolbarbutton-icon {
-  background: #ffffff1f !important;
-  margin-left: 10px;
-}
-.titlebar-close > .toolbarbutton-icon {
-  background: #ffffff1f !important;
-}
-.titlebar-button:hover > .toolbarbutton-icon {
-  background: #3aea4994 !important;
-  height: 13px !important;
-}
-.titlebar-min:hover > .toolbarbutton-icon {
-  background: #fac53794 !important;
-}
-.titlebar-close:hover > .toolbarbutton-icon {
-  background: #f34f5694 !important;
-}
 
+/*------------ WORKSPACES ------------*/
 
-
+#zen-workspaces-button {
+  .subviewbutton {
+    &[active="true"] {
+      background: rgba(255, 255, 255, 0.1) !important;
+      border: 1px solid #ffffff0a !important;
+      border-radius: 4px !important;
+      transition: 0.3s !important;
+    }
+    &:hover {
+      background: rgba(255, 255, 255, 0.2) !important;
+      border-radius: 4px !important;
+      transition: 0.3s !important;
+    }
+    &:after {
+      display: none !important;
+    }
+  }
+}
+#zen-current-workspace-indicator {
+  padding: 6px calc(4px + var(--tab-inline-padding)) !important;
+  font-weight: 500 !important;
+  margin-left: -4px !important;
+}
 
 /*------------ PLAYING/MUTE ICON APPEARANCE CUSTOMIZATION ------------*/
 
@@ -294,8 +193,8 @@
   .tabbrowser-tab:is([pinned]) .tab-background {
     background-color: color-mix(in srgb, var(--tab-group-color-gray-invert) 4%, transparent) !important;
     border: 1px solid color-mix(in srgb, var(--tab-group-color-gray-invert) 14%, transparent) !important;
-    /*border-left: 28px solid color-mix(in srgb, var(--tab-group-color-gray-invert) 14%, transparent) !important;
-    */border-radius: 4px !important;
+    /* border-left: 28px solid color-mix(in srgb, var(--tab-group-color-gray-invert) 14%, transparent) !important; */
+    border-radius: 4px !important;
     margin: 2px 2px !important;
   }
 
@@ -333,9 +232,7 @@
   }
 
 /* D. Selected Indicator */
-  .tabbrowser-tab:is([selected],
-  [visuallyselected],
-  [multiselected]) .tab-background {
+  .tabbrowser-tab:is([selected], [visuallyselected],  [multiselected]) .tab-background {
     background-color: color-mix(in srgb, var(--identity-tab-color, var(--tab-group-color-gray-invert)) 15%, transparent) !important;
     border: 1px solid color-mix(in srgb, var(--identity-tab-color, var(--tab-group-color-gray-invert)) 20%, transparent) !important;
   }
@@ -394,9 +291,7 @@
 }
 
 /* C. Selected Indicator */
-.tabbrowser-tab:is([selected],
-[visuallyselected],
-[multiselected]) .tab-background {
+.tabbrowser-tab:is([selected], [visuallyselected], [multiselected]) .tab-background {
   background-color: color-mix(in srgb, var(--identity-tab-color, var(--tab-group-color-gray-invert)) 15%, transparent) !important;
   border: 1px solid color-mix(in srgb, var(--identity-tab-color, var(--tab-group-color-gray-invert)) 20%, transparent) !important;
   border-left: 28px solid color-mix(in srgb, var(--identity-tab-color, var(--tab-group-color-gray-invert)) 20%, transparent) !important;
