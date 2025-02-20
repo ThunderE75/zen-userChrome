@@ -7,26 +7,33 @@
   font-family: 'Poppins', sans-serif;
 }
 
-
 /*------------ URL BAR ------------*/
 
 #urlbar {
-  border-radius: 8px !important;
+  --toolbarbutton-border-radius: 10px !important;
+  border-radius: 10px;
 }
 
-#urlbar-background {
-  border: 1px solid #ffffff04 !important;
+#identity-box:not(.chromeUI) #identity-icon-box {
+  border-radius: 10px !important;
 }
 
-:root {
-  --zen-border-radius: 8px !important;
+#urlbar:not([customizing]) {
+  opacity: 0.15;
+  filter: grayscale(100%);
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  /* 50% opacity outline */
+  transition: transform 400ms ease 1s, opacity 400ms ease 1s, filter 400ms ease 1s, outline-color 400ms ease 1s !important;
 }
 
-.tabbrowser-tab[pending="true"] .tab-icon-stack {
-
-  opacity: 0.5;
+#urlbar:hover,
+#urlbar:focus-within {
+  opacity: 1;
+  filter: grayscale(0%);
+  outline-color: rgba(0, 0, 0, 0);
+  transition-duration: 500ms, 200ms, 200ms, 200ms !important;
+  transition-delay: 0s !important;
 }
-
 
 /*------------ Picture-in-Picture ------------*/
 
@@ -43,7 +50,8 @@
 /* Hides extensions buttons unless hovered */
 #nav-bar:not(:has(*[open="true"])) {
   .unified-extensions-item {
-    transition: opacity 0.25s ease-in-out, filter 0.25s ease-in-out !important;
+    transition: opacity 400ms ease 1s,
+      filter 400ms ease 1s !important;
   }
 
   &:not(:hover) {
@@ -57,11 +65,10 @@
     .unified-extensions-item {
       opacity: 1 !important;
       filter: grayscale(0%);
+      transition-delay: 0s !important;
     }
   }
 }
-
-
 
 /*------------ Auto-hide Bottom Essentials ------------*/
 /* https://www.reddit.com/r/zen_browser/comments/1ikina4/comment/mbmxp7o/ */
@@ -69,7 +76,8 @@
 #zen-essentials-container .tabbrowser-tab:is([pinned]) {
   opacity: 0;
   filter: grayscale(100%);
-  transition: opacity 0.25s ease-in-out, filter 0.25s ease-in-out !important;
+  transition: opacity 400ms ease 1s,
+    filter 400ms ease 1s !important;
   pointer-events: none;
 }
 
@@ -78,7 +86,9 @@
   opacity: 1 !important;
   filter: grayscale(0%);
   pointer-events: auto;
+  transition-delay: 0s !important;
 }
+
 
 
 /*------------ Auto-hide Bottom Workspace Icons ------------*/
