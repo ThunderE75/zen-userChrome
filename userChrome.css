@@ -43,15 +43,24 @@
 /* Hides extensions buttons unless hovered */
 #nav-bar:not(:has(*[open="true"])) {
   .unified-extensions-item {
-    transition: opacity 0.25s !important;
+    transition: opacity 0.25s ease-in-out, filter 0.25s ease-in-out !important;
   }
 
   &:not(:hover) {
     .unified-extensions-item {
-      opacity: 0 !important;
+      opacity: 0.05 !important;
+      filter: grayscale(100%);
+    }
+  }
+
+  &:hover {
+    .unified-extensions-item {
+      opacity: 1 !important;
+      filter: grayscale(0%);
     }
   }
 }
+
 
 
 /*------------ Auto-hide Bottom Essentials ------------*/
@@ -59,24 +68,32 @@
 
 #zen-essentials-container .tabbrowser-tab:is([pinned]) {
   opacity: 0;
-  transition: opacity 0.5s ease-in-out !important;
+  filter: grayscale(100%);
+  transition: opacity 0.25s ease-in-out, filter 0.25s ease-in-out !important;
   pointer-events: none;
 }
 
 #zen-essentials-container:hover .tabbrowser-tab:is([pinned]),
 #zen-essentials-container:focus-within .tabbrowser-tab:is([pinned]) {
   opacity: 1 !important;
+  filter: grayscale(0%);
   pointer-events: auto;
 }
 
-#zen-sidebar-icons-wrapper {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out !important;
 
-  &:hover {
-    opacity: 1 !important;
-  }
+/*------------ Auto-hide Bottom Workspace Icons ------------*/
+
+#zen-sidebar-icons-wrapper {
+  opacity: 0.1;
+  filter: grayscale(100%);
+  transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out !important;
 }
+
+#zen-sidebar-icons-wrapper:hover {
+  opacity: 1 !important;
+  filter: grayscale(0%);
+}
+
 
 /* ============================================================================== */
 
