@@ -8,6 +8,7 @@
 }
 
 /*------------ URL BAR ------------*/
+/* https://github.com/greed-d/Mask-URL-bar/blob/main/userChrome.css */
 
 #urlbar {
   --toolbarbutton-border-radius: 10px !important;
@@ -44,7 +45,7 @@
   }
 }
 
-/*------------ Auto-hide Extension Icons ------------*/
+/*------------ Auto-dim Extension Icons ------------*/
 /* https://github.com/nieffka/bubble-clean-zen/blob/main/chrome/userChrome.css#L1334C1-L1334C46 */
 
 /* Hides extensions buttons unless hovered */
@@ -70,6 +71,40 @@
   }
 }
 
+/* Also the Unified Extension Icons */
+
+#unified-extensions-button {
+  transition: opacity 400ms ease 1s !important;
+}
+
+#nav-bar:not(:hover) #unified-extensions-button {
+  opacity: 0.05 !important;
+}
+
+#nav-bar:hover #unified-extensions-button {
+  opacity: 1 !important;
+  transition-delay: 0s !important;
+}
+
+/* To change the icon  */
+/* #unified-extensions-button {
+  list-style-image: url("chrome://branding/content/icon32.png") !important;
+} */
+
+/*------------ Auto-dim Panel UI Icon ------------*/
+#PanelUI-menu-button {
+  transition: opacity 400ms ease 1s !important;
+}
+
+#nav-bar:not(:hover) #PanelUI-menu-button {
+  opacity: 0.05 !important;
+}
+
+#nav-bar:hover #PanelUI-menu-button {
+  opacity: 1 !important;
+  transition-delay: 0s !important;
+}
+
 /*------------ Auto-hide Bottom Essentials ------------*/
 /* https://www.reddit.com/r/zen_browser/comments/1ikina4/comment/mbmxp7o/ */
 
@@ -88,8 +123,6 @@
   pointer-events: auto;
   transition-delay: 0s !important;
 }
-
-
 
 /*------------ Auto-hide Bottom Workspace Icons ------------*/
 
