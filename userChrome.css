@@ -15,6 +15,10 @@
   border-radius: 10px;
 }
 
+#urlbar:not([focused]) .urlbar-input {
+  text-align: center !important;
+}
+
 #identity-box:not(.chromeUI) #identity-icon-box {
   border-radius: 10px !important;
 }
@@ -35,43 +39,11 @@
   transition-delay: 0s !important;
 }
 
-/* Centerted URL Text */
-/* https://github.com/JLBlk/Zen-Themes/blob/main/SuperUrlBar/SuperUrlBar.css */
-
-/* Centers the url text when enabled in dropdown: 
-      1.Option: Centers the text unless url bar is focused; 
-      2.Option: Centers the text always
-*/
-
-/* #urlbar:not([focused]) .urlbar-input {
-  text-align: center !important;
-}
-
-
-#urlbar:is([breakout][breakout-extend], [breakout][usertyping][focused]):after {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-
-    width: 87vw;
-  height: 94.6vh;
-
-  top: 42px;
-  left: -141px;
-  
-  background-color: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(3px);
-  z-index: -1;
-} */
-
-/* Removing Icons */
-
-/* @media (-moz-bool-pref: "uc.urlbar.icon.bookmark.removed") {
+@media (-moz-bool-pref: "uc.urlbar.icon.bookmark.removed") {
   #star-button-box {
     display: none;
   }
-} */
-
+}
 
 /*------------ Picture-in-Picture ------------*/
 
@@ -202,7 +174,7 @@
   border-radius: 10px;
   /*- transition: 0.2s ease; */
   transition: opacity 400ms ease 1s, background 0.2s ease, border 0.2s ease !important;
-  opacity: 0.1 !important;
+  opacity: 0.3 !important;
 }
 
 .titlebar-button:hover>.toolbarbutton-icon {
