@@ -20,10 +20,9 @@
 }
 
 #urlbar:not([customizing]) {
-  opacity: 0.15;
+  opacity: 0.2;
   filter: grayscale(100%);
   outline: 2px solid rgba(255, 255, 255, 0.5);
-  /* 50% opacity outline */
   transition: transform 400ms ease 1s, opacity 400ms ease 1s, filter 400ms ease 1s, outline-color 400ms ease 1s !important;
 }
 
@@ -35,6 +34,44 @@
   transition-duration: 500ms, 200ms, 200ms, 200ms !important;
   transition-delay: 0s !important;
 }
+
+/* Centerted URL Text */
+/* https://github.com/JLBlk/Zen-Themes/blob/main/SuperUrlBar/SuperUrlBar.css */
+
+/* Centers the url text when enabled in dropdown: 
+      1.Option: Centers the text unless url bar is focused; 
+      2.Option: Centers the text always
+*/
+
+/* #urlbar:not([focused]) .urlbar-input {
+  text-align: center !important;
+}
+
+
+#urlbar:is([breakout][breakout-extend], [breakout][usertyping][focused]):after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+
+    width: 87vw;
+  height: 94.6vh;
+
+  top: 42px;
+  left: -141px;
+  
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(3px);
+  z-index: -1;
+} */
+
+/* Removing Icons */
+
+/* @media (-moz-bool-pref: "uc.urlbar.icon.bookmark.removed") {
+  #star-button-box {
+    display: none;
+  }
+} */
+
 
 /*------------ Picture-in-Picture ------------*/
 
@@ -57,7 +94,7 @@
 
   &:not(:hover) {
     .unified-extensions-item {
-      opacity: 0.05 !important;
+      opacity: 0.1 !important;
       filter: grayscale(100%);
     }
   }
@@ -78,7 +115,7 @@
 }
 
 #nav-bar:not(:hover) #unified-extensions-button {
-  opacity: 0.05 !important;
+  opacity: 0.1 !important;
 }
 
 #nav-bar:hover #unified-extensions-button {
@@ -97,10 +134,25 @@
 }
 
 #nav-bar:not(:hover) #PanelUI-menu-button {
-  opacity: 0.05 !important;
+  opacity: 0.1 !important;
 }
 
 #nav-bar:hover #PanelUI-menu-button {
+  opacity: 1 !important;
+  transition-delay: 0s !important;
+}
+
+/*------------ Auto-dim Downloads Icon ------------*/
+
+#downloads-button {
+  transition: opacity 400ms ease 1s !important;
+}
+
+#nav-bar:not(:hover) #downloads-button {
+  opacity: 0.1 !important;
+}
+
+#nav-bar:hover #downloads-button {
   opacity: 1 !important;
   transition-delay: 0s !important;
 }
@@ -148,26 +200,35 @@
 .titlebar-button>.toolbarbutton-icon {
   list-style-image: none;
   border-radius: 10px;
-  transition: 0.2s ease;
+  /*- transition: 0.2s ease; */
+  transition: opacity 400ms ease 1s, background 0.2s ease, border 0.2s ease !important;
+  opacity: 0.1 !important;
 }
 
 .titlebar-button:hover>.toolbarbutton-icon {
   background: #3aea4994 !important;
   border: 1px solid #3aea49 !important;
+  opacity: 1 !important;
+  transition-delay: 0s !important;
 }
 
 .titlebar-min:hover>.toolbarbutton-icon {
   background: #fac53794 !important;
   border: 1px solid #fac537 !important;
+  opacity: 1 !important;
+  transition-delay: 0s !important;
 }
 
 .titlebar-close:hover>.toolbarbutton-icon {
   background: #f34f5694 !important;
   border: 1px solid #f34f56 !important;
+  opacity: 1 !important;
+  transition-delay: 0s !important;
 }
 
+/* Default background when not hovered */
 .titlebar-button>.toolbarbutton-icon {
-  background: #ffffff17 !important;
+  background: hsla(0, 0%, 100%, 0.1) !important;
   border: 1px solid #ffffff21 !important;
 }
 
