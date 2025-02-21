@@ -9,10 +9,11 @@
 
 /*------------ URL BAR ------------*/
 /* https://github.com/greed-d/Mask-URL-bar/blob/main/userChrome.css */
+/* https://github.com/zen-browser/theme-store/blob/c80269fe3468987bc0ecd039ece7737b9ab4efbd/themes/a5f6a231-e3c8-4ce8-8a8e-3e93efd6adec/chrome.css */
 
 #urlbar {
-  --toolbarbutton-border-radius: 10px !important;
-  border-radius: 10px;
+  --toolbarbutton-border-radius: 8px !important;
+  border-radius: 8px;
 }
 
 #urlbar:not([focused]) .urlbar-input {
@@ -20,7 +21,7 @@
 }
 
 #identity-box:not(.chromeUI) #identity-icon-box {
-  border-radius: 10px !important;
+  border-radius: 6px !important;
 }
 
 #urlbar:not([customizing]) {
@@ -39,19 +40,47 @@
   transition-delay: 0s !important;
 }
 
-@media (-moz-bool-pref: "uc.urlbar.icon.bookmark.removed") {
-  #star-button-box {
-    display: none;
-  }
+/* Removes the bookmark icon */
+#star-button-box {
+  display: none;
 }
 
-/*------------ Picture-in-Picture ------------*/
+/* Blurs the background */
+#urlbar[breakout-extend="true"] #urlbar-background {
+  border: solid 2px color-mix(in rgba, rgba(255, 255, 255, 0.5)) !important;
+  border-radius: 6px !important;
+  background-color: color-mix(in hsl, hsl(0, 0%, 5%), transparent 50%) !important;
+  backdrop-filter: blur(6px) !important;
+}
 
-@-moz-document url("chrome://global/content/pictureinpicture/player.xhtml") {
-  html {
-    border: 0px solid rgba(255, 0, 0, 255) !important;
-    border-radius: 1rem !important;
-  }
+/* Unifies the border radius */
+.urlbarView-row {
+  border-radius: 6px !important;
+}
+
+/* Deletes the border */
+.urlbarView-body-inner {
+  border: none !important;
+}
+
+/* Styles the search options */
+.search-one-offs {
+  border-top: none !important;
+  border-radius: 6px !important;
+  padding: 4px !important;
+  margin: 0px 0px 7px 0px !important;
+  backdrop-filter: brightness(50%);
+}
+
+.searchbar-engine-one-off-item {
+  border-radius: 6px !important;
+  margin-right: 3px !important;
+}
+
+/* Nav Bar Padding fix */
+#nav-bar {
+  margin-top: var(--zen-element-separation) !important;
+  margin-bottom: var(--zen-element-separation) !important
 }
 
 /*------------ Auto-dim Extension Icons ------------*/
@@ -131,6 +160,27 @@
 
 /*------------ Auto-hide Bottom Essentials ------------*/
 /* https://www.reddit.com/r/zen_browser/comments/1ikina4/comment/mbmxp7o/ */
+/* https://github.com/TheBigWazz/ZenThemes/blob/main/Bottom-Essentials/userChrome.css */
+
+#zen-essentials-container {
+  margin-top: auto !important; /* Push container to the bottom of the layout */
+  order: 999 !important; /* Ensure it's the last element in flex/grid layout */
+  overflow: hidden !important;
+  transition: max-height 0.3s ease-out !important; /* Smooth height transitions */
+  opacity: 1 !important;
+  
+  /* Responsive grid layout for pinned tabs/items */
+  grid-template-columns: repeat(auto-fit, minmax(var(--tab-pinned-min-width-expanded), auto)) !important;
+  
+  /* Scroll handling */
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  scrollbar-width: thin !important; /* Slim scrollbar */
+  
+  display: grid !important;
+  padding: 0 0 5px !important;
+  border-top: none !important; 
+}
 
 #zen-essentials-container .tabbrowser-tab:is([pinned]) {
   opacity: 0;
