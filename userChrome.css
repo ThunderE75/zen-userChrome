@@ -245,7 +245,6 @@
   filter: grayscale(0%);
 }
 
-
 /* ============================================================================== */
 
 /* From Lunar OS */
@@ -253,22 +252,19 @@
 
 /*------------ WINDOWS CONTROL (MIN-MAX-CLOSE) ------------*/
 
-/* ============================================================================== */
-
 #navigator-toolbox[zen-right-side="true"]>#zen-sidebar-top-buttons>.titlebar-buttonbox-container>.titlebar-buttonbox {
   margin-top: 4px !important;
 }
 
 .titlebar-buttonbox {
-  margin-right: 16px;
-
+  margin-right: 12px;
 }
 
 .titlebar-button {
   padding: 0px !important;
-  min-height: 12px !important;
-  min-width: 12px !important;
-  height: 12px !important;
+  min-height: 13px !important;
+  min-width: 13px !important;
+  height: 13px !important;
   align-self: center;
   margin-left: 8px !important;
   border-radius: 50px;
@@ -283,13 +279,6 @@
   border: 1px solid #ffffff21 !important;
 }
 
-.titlebar-button:hover {
-  background: #3aea4994 !important;
-  border: 1px solid #3aea49 !important;
-  opacity: 1 !important;
-  transition-delay: 0s !important;
-}
-
 .titlebar-min:hover {
   background: #fac53794 !important;
   border: 1px solid #fac537 !important;
@@ -297,9 +286,22 @@
   transition-delay: 0s !important;
 }
 
+.titlebar-restore:hover {
+  background: #3aea4994 !important;
+  border: 1px solid #3aea49 !important;
+  opacity: 1 !important;
+  transition-delay: 0s !important;
+}
+
 .titlebar-close:hover {
   background: #f34f5694 !important;
   border: 1px solid #f34f56 !important;
+  opacity: 1 !important;
+  transition-delay: 0s !important;
+}
+
+/* When the whole buttonbox is hovered, apply full opacity and default hover bg to all buttons */
+.titlebar-buttonbox:hover .titlebar-button {
   opacity: 1 !important;
   transition-delay: 0s !important;
 }
@@ -314,7 +316,7 @@
 /*------------ WORKSPACES ------------*/
 
 #zen-workspaces-button {
-  .subviewbutton {
+  .sublivebutton {
     &[active="true"] {
       background: rgba(255, 255, 255, 0.1) !important;
       border: 1px solid #ffffff0a !important;
