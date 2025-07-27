@@ -30,78 +30,105 @@
 /*------------ URL BAR ------------*/
 /* https://github.com/greed-d/Mask-URL-bar/blob/main/userChrome.css */
 /* https://github.com/zen-browser/theme-store/blob/c80269fe3468987bc0ecd039ece7737b9ab4efbd/themes/a5f6a231-e3c8-4ce8-8a8e-3e93efd6adec/chrome.css */
+/* ------------ URL BAR ------------- */
 
-#urlbar {
-  --toolbarbutton-border-radius: 8px !important;
-  border-radius: 8px;
+/* Dimmed URL bar frame when not focused */
+/* Force square corners on entire URL bar and its layers */
+/* ----------------------------------------
+   GLOBAL: Remove rounded corners everywhere
+------------------------------------------- */
+#urlbar,
+#urlbar-background,
+#urlbar-input-container,
+#identity-box,
+#identity-icon-box,
+#tracking-protection-icon-container,
+#page-action-buttons,
+#urlbar-container,
+#urlbar-results,
+.urlbarView,
+.urlbarView-row,
+.search-one-offs,
+.searchbar-engine-one-off-item {
+  border-radius: 0 !important;
 }
 
+/* ----------------------------------------
+   URL BAR: Inactive state (dim + black bg)
+------------------------------------------- */
+#urlbar {
+  opacity: 0.4;
+  filter: grayscale(100%);
+  transition:
+    opacity 400ms ease,
+    filter 400ms ease,
+    outline-color 400ms ease !important;
+  transition-delay: 1s !important;
+}
+
+/* Center + fade text when not focused */
 #urlbar:not([focused]) .urlbar-input {
   text-align: center !important;
 }
 
-#identity-box:not(.chromeUI) #identity-icon-box {
-  border-radius: 6px !important;
+/* Pure black background when not focused */
+#urlbar-background {
+  background-color: #000 !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: none !important;
+  transition: background-color 300ms ease, backdrop-filter 300ms ease !important;
 }
 
-#urlbar:not([customizing]) {
-  opacity: 0.2;
-  filter: grayscale(100%);
-  outline: 2px solid rgba(255, 255, 255, 0.5);
-  transition: transform 400ms ease 1s, opacity 400ms ease 1s, filter 400ms ease 1s, outline-color 400ms ease 1s !important;
-}
-
+/* ----------------------------------------
+   URL BAR: Active/focused state
+------------------------------------------- */
 #urlbar:hover,
 #urlbar:focus-within {
   opacity: 1;
   filter: grayscale(0%);
   outline-color: rgba(0, 0, 0, 0);
-  transition-duration: 500ms, 200ms, 200ms, 200ms !important;
   transition-delay: 0s !important;
 }
 
-/* Removes the bookmark icon */
-#star-button-box {
-  display: none;
-}
-
-/* Blurs the background */
+/* Blurred background when focused */
+#urlbar:focus-within #urlbar-background,
 #urlbar[breakout-extend="true"] #urlbar-background {
-  border: solid 2px color-mix(in rgba, rgba(255, 255, 255, 0.5)) !important;
-  border-radius: 6px !important;
-  background-color: color-mix(in hsl, hsl(0, 0%, 5%), transparent 50%) !important;
-  backdrop-filter: blur(6px) !important;
+  background-color: color-mix(in srgb, black 90%, transparent 40%) !important;
+  backdrop-filter: blur(120px) brightness(1.4) contrast(1.1) !important;
+  transition: background-color 300ms ease, backdrop-filter 300ms ease !important;
 }
 
-/* Unifies the border radius */
+
+/* ----------------------------------------
+   Suggestions dropdown and search buttons
+------------------------------------------- */
 .urlbarView-row {
-  border-radius: 6px !important;
+  border-radius: 0 !important;
 }
 
-/* Deletes the border */
 .urlbarView-body-inner {
   border: none !important;
 }
 
-/* Styles the search options */
 .search-one-offs {
   border-top: none !important;
-  border-radius: 6px !important;
+  border-radius: 0 !important;
   padding: 4px !important;
-  margin: 0px 0px 7px 0px !important;
-  backdrop-filter: brightness(50%);
+  margin: 0 0 7px 0 !important;
+  backdrop-filter: brightness(80%);
 }
 
 .searchbar-engine-one-off-item {
-  border-radius: 6px !important;
+  border-radius: 0 !important;
   margin-right: 3px !important;
 }
 
-/*  /* Nav Bar Padding fix */
-/*  #nav-bar {
-/*    margin-top: var(--zen-element-separation) !important;
-/*    margin-bottom: var(--zen-element-separation) !important
-/*  }
+/* ----------------------------------------
+   Optional: Hide bookmark (star) icon
+------------------------------------------- */
+#star-button-box {
+  display: none !important;
+}
 
 /*------------ Auto-dim Extension Icons ------------*/
 /* https://github.com/nieffka/bubble-clean-zen/blob/main/chrome/userChrome.css#L1334C1-L1334C46 */
@@ -181,10 +208,10 @@
 /*------------ Auto-dim Unloaded Tabs ------------*/
 /* https://github.com/Felkazz/zen-browser-better-unloaded-tabs/blob/main/chrome.css */
 
-.tabbrowser-tab[pending="true"] {
+/* .tabbrowser-tab[pending="true"] {
   filter: grayscale(0.5);
   opacity: 0.75;
-}
+} */
 
 
 /* /*------------ Auto-hide Bottom Essentials ------------*/
