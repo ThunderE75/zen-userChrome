@@ -1,9 +1,9 @@
-zen-themes
-zen-themes.css
-
 # Sine mods folders
 sine-mods
 utils
 resources
 JS
 CSS
+
+# VS code Folder
+.vscode

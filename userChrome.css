@@ -50,7 +50,7 @@
 .urlbarView-row,
 .search-one-offs,
 .searchbar-engine-one-off-item {
-  border-radius: 0 !important;
+  border-radius: 4px !important;
 }
 
 /* ----------------------------------------
