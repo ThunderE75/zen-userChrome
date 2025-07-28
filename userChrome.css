@@ -1,10 +1,6 @@
+/* Get Started Here https://docs.zen-browser.app/guides/live-editing */
 .reset-icon {
   display: none !important;
-}
-
-/* Set Font to Poppins */
-* {
-  font-family: 'Poppins', sans-serif;
 }
 
 
@@ -23,20 +19,29 @@
 
 /*------------ about:config ------------*/
 /* Set false */
-/* zen.workspaces.show-workspace-indicator */
+/* 
+zen.workspaces.show-workspace-indicator 
+zen.downloads.download-animation
+zen.urlbar.replace-newtab
+zen.urlbar.show-domain-only-in-sidebar
+zen.workspaces.separate-essentials
+zen.workspaces.show-workspace-indicator
+
 /* set true  */
-/* zen.theme.gradient.show-custom-colors */
+/* 
+zen.theme.gradient.show-custom-colors 
+devtools.debugger.remote-enabled
+devtools.chrome.enabled
+toolkit.legacyUserProfileCustomizations.stylesheets
+zen.theme.color-prefs.amoled
+zen.theme.gradient.show-custom-colors
+*/
+
+
 
 /*------------ URL BAR ------------*/
 /* https://github.com/greed-d/Mask-URL-bar/blob/main/userChrome.css */
 /* https://github.com/zen-browser/theme-store/blob/c80269fe3468987bc0ecd039ece7737b9ab4efbd/themes/a5f6a231-e3c8-4ce8-8a8e-3e93efd6adec/chrome.css */
-/* ------------ URL BAR ------------- */
-
-/* Dimmed URL bar frame when not focused */
-/* Force square corners on entire URL bar and its layers */
-/* ----------------------------------------
-   GLOBAL: Remove rounded corners everywhere
-------------------------------------------- */
 #urlbar,
 #urlbar-background,
 #urlbar-input-container,
@@ -97,7 +102,6 @@
   backdrop-filter: blur(120px) brightness(1.4) contrast(1.1) !important;
   transition: background-color 300ms ease, backdrop-filter 300ms ease !important;
 }
-
 
 /* ----------------------------------------
    Suggestions dropdown and search buttons
@@ -205,60 +209,6 @@
   transition-delay: 0s !important;
 }
 
-/*------------ Auto-dim Unloaded Tabs ------------*/
-/* https://github.com/Felkazz/zen-browser-better-unloaded-tabs/blob/main/chrome.css */
-
-/* .tabbrowser-tab[pending="true"] {
-  filter: grayscale(0.5);
-  opacity: 0.75;
-} */
-
-
-/* /*------------ Auto-hide Bottom Essentials ------------*/
-/* /* https://www.reddit.com/r/zen_browser/comments/1ikina4/comment/mbmxp7o/ */
-/* /* https://github.com/TheBigWazz/ZenThemes/blob/main/Bottom-Essentials/userChrome.css */
-/* 
-/* #zen-essentials-container {
-/*   /* Push container to the bottom of the layout */
-/*   margin-top: auto !important;
-/*   /* Ensure it's the last element in flex/grid layout */
-/*   order: 999 !important;
-/*   overflow: hidden !important;
-/*   /* Smooth height transitions */
-/*   transition: max-height 0.3s ease-out !important;
-/*   opacity: 1 !important;
-/* 
-/*   /* Responsive grid layout for pinned tabs/items */
-/*   grid-template-columns: repeat(auto-fit, minmax(var(--tab-pinned-min-width-expanded), auto)) !important;
-/* 
-/*   /* Scroll handling */
-/*   overflow-y: auto !important;
-/*   overflow-x: hidden !important;
-/*   scrollbar-width: thin !important;
-/*   /* Slim scrollbar */
-/* 
-/*   display: grid !important;
-/*   padding: 0 0 5px !important;
-/*   border-top: none !important;
-/* }
-/* 
-/* #zen-essentials-container .tabbrowser-tab:is([pinned]) {
-/*   opacity: 0.1;
-/*   /* outline: 1px solid rgba(255, 255, 255, 0.5); */
-/*   filter: grayscale(100%);
-/*   transition: opacity 400ms ease 1s,
-/*     filter 400ms ease 1s !important;
-/*   pointer-events: none;
-/* }
-/* 
-/* #zen-essentials-container:hover .tabbrowser-tab:is([pinned]),
-/* #zen-essentials-container:focus-within .tabbrowser-tab:is([pinned]) {
-/*   opacity: 1 !important;
-/*   filter: grayscale(0%);
-/*   pointer-events: auto;
-/*   transition-delay: 0s !important;
-/* }
-
 /*------------ Auto-hide Bottom Workspace Icons ------------*/
 
 #zen-sidebar-icons-wrapper {
@@ -272,12 +222,9 @@
   filter: grayscale(0%);
 }
 
-/* ============================================================================== */
-
-/* From Lunar OS */
-/* https://github.com/lunar-os/ZenCss/ */
-
 /*------------ WINDOWS CONTROL (MIN-MAX-CLOSE) ------------*/
+/* From Lunar OS, then updated by me */
+/* https://github.com/lunar-os/ZenCss/ */
 
 #navigator-toolbox[zen-right-side="true"]>#zen-sidebar-top-buttons>.titlebar-buttonbox-container>.titlebar-buttonbox {
   margin-top: 4px !important;

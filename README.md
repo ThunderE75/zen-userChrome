@@ -19,19 +19,19 @@ My userChrome.css for my Zen Browser
 
 ## Zen Mods Used
 
-| Mods                                          | Link                                                                     |
-| --------------------------------------------- | ------------------------------------------------------------------------ |
-| Animation Plus                                | https://github.com/Anoms12/Animations-plus                               |
-| Better CtrlTab Panel                          | https://github.com/psu/zen-mods                                          |
-| Better Unloaded Tabs                          | https://github.com/Felkazz/zen-browser-better-unloaded-tabs              |
-| Bleeding Corners Fix                          | https://github.com/rsiebertdev/zen-themes/tree/main/bleeding-corners-fix |
-| Bleeding Corners FixCleaner Extensions (v2.2) |                                                                          |
-| Colored container tab                         | https://github.com/ocean-mars/things                                     |
-| Custom uiFont                                 |                                                                          |
-| Disable Rounded Corners                       |                                                                          |
-| Floating Status Bar                           | https://github.com/AmirhBeigi/zen-floating-statusbar/                    |
-| Only Close On Hover                           |
-| Pimp your PiP                                 |
-| Right Side Glance Buttons                     | https://github.com/psu/zen-mods                                          |
-| SuperPins                                     |
-| Zen Context Menu                              | https://github.com/KiKaraage/ZenMods/                                    |
+| Mods                                   | Link                                                                     |
+| -------------------------------------- | ------------------------------------------------------------------------ |
+| Animation Plus                         | https://github.com/Anoms12/Animations-plus                               |
+| Better CtrlTab Panel                   | https://github.com/psu/zen-mods                                          |
+| Better Unloaded Tabs                   | https://github.com/Felkazz/zen-browser-better-unloaded-tabs              |
+| Bleeding Corners Fix                   | https://github.com/rsiebertdev/zen-themes/tree/main/bleeding-corners-fix |
+| Bleeding Corners FixCleaner Extensions |                                                                          |
+| Colored container tab                  | https://github.com/ocean-mars/things                                     |
+| Custom uiFont                          |                                                                          |
+| Disable Rounded Corners                |                                                                          |
+| Floating Status Bar                    | https://github.com/AmirhBeigi/zen-floating-statusbar/                    |
+| Only Close On Hover                    |
+| Pimp your PiP                          |
+| Right Side Glance Buttons              | https://github.com/psu/zen-mods                                          |
+| SuperPins                              |
+| Zen Context Menu                       | https://github.com/KiKaraage/ZenMods/                                    |
