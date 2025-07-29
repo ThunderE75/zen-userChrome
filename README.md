@@ -25,6 +25,8 @@ My userChrome.css for my Zen Browser
    - `zen.theme.gradient.show-custom-colors`
 3. Right click on sidebar, then click `Edit Theme`, then click the `+` icon and add `#ffffff` as a custom color 
 4. Now navigate to [Zen Mods](https://zen-browser.app/mods/) & download the mods listed below.
+5. (Optional) Install [Sine Mods](https://github.com/CosmoCreeper/Sine) to manage mods.
+    - Set `zen.browser.is-cool` as `True` in `about:config`
 
 ## Zen Mods Used
 
